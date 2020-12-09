@@ -1,0 +1,70 @@
+﻿@page
+@model WebDB_MIA.Pages.Criminals.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Criminal</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Criminal.ID" />
+            <div class="form-group">
+                <label asp-for="Criminal.Name" class="control-label"></label>
+                <input asp-for="Criminal.Name" class="form-control" />
+                <span asp-validation-for="Criminal.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Criminal.Description" class="control-label"></label>
+                <input asp-for="Criminal.Description" class="form-control" />
+                <span asp-validation-for="Criminal.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Criminal.Gender" class="control-label"></label>
+                <input asp-for="Criminal.Gender" class="form-control" />
+                <span asp-validation-for="Criminal.Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Criminal.Address" class="control-label"></label>
+                <input asp-for="Criminal.Address" class="form-control" />
+                <span asp-validation-for="Criminal.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Criminal.TypesCrimesID" class="control-label"></label>
+                <select asp-for="Criminal.TypesCrimesID" class="form-control" asp-items="ViewBag.TypesCrimesID"></select>
+                <span asp-validation-for="Criminal.TypesCrimesID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Criminal.CasualtiesID" class="control-label"></label>
+                <select asp-for="Criminal.CasualtiesID" class="form-control" asp-items="ViewBag.CasualtiesID"></select>
+                <span asp-validation-for="Criminal.CasualtiesID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Criminal.Status" class="control-label"></label>
+                <input asp-for="Criminal.Status" class="form-control" />
+                <span asp-validation-for="Criminal.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Criminal.StaffID" class="control-label"></label>
+                <select asp-for="Criminal.StaffID" class="form-control" asp-items="ViewBag.StaffID"></select>
+                <span asp-validation-for="Criminal.StaffID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
